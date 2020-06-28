@@ -7,7 +7,23 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 var jsonParser = app.use(bodyParser.json())
 
+// const admin = require('firebase-admin');
+// const functions = require('firebase-functions');
+
+// const serviceAcc = require('../keyFile.json');
+
+// admin.initializeApp({
+//     credential: admin.credential.cert(serviceAcc)
+// })
+// const db = admin.firestore();
+// const userCollection = db.collection('users');
+// const hi = functions.https.onRequest((req, res) => res.send(functions.config().test));
+// router.get("/users", (req, res)=>{
+//     console.log(12, 'checked')
+// })
+
 // routers for slots and events
+
 router.get('/api/freeSlots', slotController.createFreeSlot);
 router.post('/api/events', slotController.createEvents);
 router.get('/api/events', slotController.getEvents);

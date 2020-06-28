@@ -13,6 +13,7 @@
     "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
     "font-awesome": "^4.7.0",
+    "moment": "^2.27.0",
     "v-select-box": "^2.3.3",
     "vue": "^2.6.11",
     "vue-multiselect": "^2.1.6",

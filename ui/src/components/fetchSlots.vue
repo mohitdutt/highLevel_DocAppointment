@@ -54,6 +54,7 @@ export default {
             this.$store.state.slots.timeSlot = e.replace(/[^0-9.]/g, '');
         },
         changeEventCase(){ // watch updated
+        console.log('check', this.changeEvent);
             if(this.changeEvent == 1){
                 this.fetchFreeSlots();
                 this.$emit("changeEventsAccepted", 0);

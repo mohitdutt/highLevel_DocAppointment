@@ -1,17 +1,28 @@
 const express = require('express');
-require('./db/mongoose');
 const router = require('./routers');
 var bodyParser = require('body-parser')
 const app = express();
 const port = process.env.port || 3000
 const cors = require('cors');
+require('./db/mongoose');
 app.use(express.json());
 app.use(router);
-
+const route = express.Router();
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors());
 app.use(bodyParser.json());
 
-app.listen(port, ()=>{
+// const functions = require('firebase-functions');
+//  const admin = require('firebase-admin');
+//  admin.initializeApp();
+// console.log(1, functions.config());
+// exports.helloWorld = functions.https.onRequest((request, response) => {
+//     response.send(1, "Hello world from firebase");
+// })
+
+// exports.hello = functions.https.onRequest((request, response) => {
+//     response.send(1, request.query.lastName);
+// })
+app.listen(port, () => {
     console.log('server is up on port' + port);
 })
