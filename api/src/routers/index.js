@@ -17,10 +17,6 @@ var jsonParser = app.use(bodyParser.json())
 // })
 // const db = admin.firestore();
 // const userCollection = db.collection('users');
-// const hi = functions.https.onRequest((req, res) => res.send(functions.config().test));
-// router.get("/users", (req, res)=>{
-//     console.log(12, 'checked')
-// })
 
 // routers for slots and events
 

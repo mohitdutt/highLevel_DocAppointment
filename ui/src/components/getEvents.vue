@@ -59,7 +59,7 @@ export default {
         }),
         getAllEvents(){ //get All events
             const params = {startDate: this.startDate.toISOString(), endDate: this.endDate.toISOString(), timeZone:this.selectedTimeZone}
-            if(params.startDate < params.endDate){
+            if(params.startDate > params.endDate){
                 alert("start date can not be lesser than end date")
             }
             this.events(params).then((response)=>{

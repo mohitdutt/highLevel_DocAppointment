@@ -55,8 +55,7 @@ export default {
               const f = et.toISOString();
               const abc = this.intervals(params.slot, f)
               const filtered = this.timeConversionAsPerTimeZone(abc, this.countryName);
-              let x = []
-              console.log(2, filtered)
+              let x = [];
               for(let i=0; i<this.slots.length; i++){
                   let index = filtered.indexOf(this.slots[i])
                   if(index>-1){
@@ -67,7 +66,6 @@ export default {
                 this.events(params).then((response)=>{
                   
                   if(response){
-                    console.log(9, response)
                     this.$emit('newSlots', 1)
                       alert('Slots loaded successfully!');
                   }

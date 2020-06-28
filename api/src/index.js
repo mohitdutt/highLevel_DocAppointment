@@ -19,10 +19,6 @@ app.use(bodyParser.json());
 // exports.helloWorld = functions.https.onRequest((request, response) => {
 //     response.send(1, "Hello world from firebase");
 // })
-
-// exports.hello = functions.https.onRequest((request, response) => {
-//     response.send(1, request.query.lastName);
-// })
 app.listen(port, () => {
     console.log('server is up on port' + port);
 })

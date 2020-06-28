@@ -24,11 +24,6 @@ const slotControllerApi = {
                     console.log(err)
                 } else {
                     if (data.length > 0) {
-                        // const abc = ("0" + data[0].slot_startTime.getUTCMonth()).slice(-2)
-                        // const d = (Number(("0" + data[0].slot_startTime.getUTCMonth()).slice(-2))) + 1
-                        // const e = d + 1
-                        // console.group(7, ("0" + d).slice(-2))
-                        // console.log(111, ("0" + data[0].slot_startTime.getUTCMonth()).slice(-2))
                         for (i = 0; i < data.length; i++) {
                             const duration = await helpers.getTimeDifference(helpers.timeConverter(("0" + data[i].slot_startTime.getUTCHours()).slice(-2) + ':' + ("0" + data[i].slot_startTime.getUTCMinutes()).slice(-2) + ':' + ("0" + data[i].slot_startTime.getUTCSeconds()).slice(-2)), helpers.timeConverter(("0" + data[i].slot_endTime.getUTCHours()).slice(-2) + ':' + ("0" + data[i].slot_endTime.getUTCMinutes()).slice(-2) + ':' + ("0" + data[i].slot_endTime.getUTCSeconds()).slice(-2)));
                             const d = (Number(("0" + data[i].slot_startTime.getUTCMonth()).slice(-2))) + 1
@@ -108,29 +103,6 @@ const slotControllerApi = {
             const endDate = req.query.endDate;
             const timeZone = req.query.timeZone;
             const app = await appointmentDb.find({ $and: [{ slot_startTime: { $lte: endDate } }, { slot_endTime: { $gte: startDate } }] })
-                // console.log(a)
-                //get from db
-                // const app = [{
-                //         slot_startTime: '2020-06-28T10:30:00.000Z',
-                //         slot_endTime: '2020-06-28T11:00:00.000Z',
-                //         createdAt: '2020-06-27T19:20:07.487Z'
-                //     },
-                //     {
-                //         slot_startTime: '2020-06-28T11:00:00.000Z',
-                //         slot_endTime: '2020-06-28T11:30:00.000Z',
-                //         createdAt: '2020-06-27T19:20:07.487Z'
-                //     },
-                //     {
-                //         slot_startTime: '2020-06-28T11:30:00.000Z',
-                //         slot_endTime: '2020-06-28T12:00:00.000Z',
-                //         createdAt: '2020-06-27T19:20:07.487Z'
-                //     },
-                //     {
-                //         slot_startTime: '2020-06-28T12:00:00.000Z',
-                //         slot_endTime: '2020-06-28T12:30:00.000Z',
-                //         createdAt: '2020-06-27T19:20:07.487Z'
-                //     }
-                // ]
             const x = [];
             for (i = 0; i < app.length - 1; i++) {
                 x.push(app[i].slot_startTime)
