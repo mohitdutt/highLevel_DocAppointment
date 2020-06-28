@@ -18,7 +18,6 @@ const slotControllerApi = {
             const allSlots = await helpers.intervals(startDate, endDate);
             var filteredSlots = [];
             //fetch from db
-            console.log(3, allSlots)
             appointmentDb.find(async(err, data) => {
                 if (err) {
                     console.log(err)
@@ -32,7 +31,6 @@ const slotControllerApi = {
                             if (index > -1) {
                                 allSlots.splice(index, duration);
                             }
-                            console.log(5, checkIndex)
                         }
                         filteredSlots = helpers.timeConversionAsPerTimeZone([...allSlots], timeZone);
 
@@ -69,13 +67,12 @@ const slotControllerApi = {
             obj = { slot_startTime: allSlots[i], slot_endTime: allSlots[i + 1], createdAt: new Date().toISOString() };
             appointment.push(obj);
         }
-        console.log(1, appointment)
         appointmentDb.find(async(err, data) => {
             if (err) {
                 console.log(err)
             } else {
                 if (data.length > 0) {
-                    console.log(2, data)
+                    console.log('data', data)
                 }
             }
         })
