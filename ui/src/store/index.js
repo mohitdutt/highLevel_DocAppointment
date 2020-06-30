@@ -5,8 +5,6 @@ import slots from './modules/slots';
 import events from './modules/events';
 
 Vue.use(Vuex);
-
-// initial state, whole reseller portal
 const state = {};
 // mutations
 const mutations = {};
